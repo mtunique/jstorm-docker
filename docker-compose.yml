@@ -1,0 +1,30 @@
+version: "2"
+services:
+    zookeeper:
+        image: zookeeper:3.4
+        container_name: zookeeper
+        restart: always
+
+    nimbus:
+        image: mtunqiue/jstorm
+        container_name: "nimbus"
+        command: jstorm nimbus
+        depends_on:
+            - zookeeper
+        links:
+            - zookeeper
+        restart: always
+        ports:
+            - 6627:6627
+
+    supervisor:
+        image: mtunqiue/jstorm
+        container_name: supervisor
+        command: jstorm supervisor
+        depends_on:
+            - nimbus
+            - zookeeper
+        links:
+            - nimbus
+            - zookeeper
+        restart: always
