@@ -6,7 +6,7 @@ services:
         restart: always
 
     nimbus:
-        image: mtunqiue/jstorm
+        image: mtunique/jstorm
         container_name: "nimbus"
         command: jstorm nimbus
         depends_on:
@@ -18,7 +18,7 @@ services:
             - 6627:6627
 
     supervisor:
-        image: mtunqiue/jstorm
+        image: mtunique/jstorm
         container_name: supervisor
         command: jstorm supervisor
         depends_on:
