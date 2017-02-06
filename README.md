@@ -18,6 +18,6 @@ docker run -d --restart always --name jstorm-nimbus --link jstorm-zookeeper:zook
 
 3. Set up a supervisor node.
 ```bash
-docker run -d --restart always --name jstorm-nimbus --link jstorm-zookeeper:zookeeper mtunique/jstorm jstorm supervisor
+docker run -d --restart always --name jstorm-supervisor --link jstorm-zookeeper:zookeeper mtunique/jstorm jstorm supervisor
 ```
 

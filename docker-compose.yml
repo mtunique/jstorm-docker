@@ -7,7 +7,7 @@ services:
 
     nimbus:
         image: mtunique/jstorm
-        container_name: "nimbus"
+        container_name: nimbus
         command: jstorm nimbus
         depends_on:
             - zookeeper
